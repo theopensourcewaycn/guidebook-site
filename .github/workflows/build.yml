@@ -1,0 +1,86 @@
+name: Build and Deploy mdBook
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  # 允许从子仓库触发
+  repository_dispatch:
+    types: [content-updated]
+  # 允许手动触发
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+      
+      - name: Install mdBook
+        run: |
+          cargo install mdbook --version 0.4.40
+          
+      - name: Install mdbook-pdf
+        run: |
+          cargo install mdbook-pdf
+          
+      - name: Build HTML
+        run: mdbook build
+        
+      - name: Build PDF
+        run: |
+          mdbook-pdf --standalone true
+          mkdir -p book/pdf
+          if [ -f "book/pdf/output.pdf" ]; then
+            mv book/pdf/output.pdf book/the-open-source-way.pdf
+          elif [ -f "output.pdf" ]; then
+            mv output.pdf book/the-open-source-way.pdf
+          fi
+        continue-on-error: true
+        
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: book
+          path: book/
+          
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
+          publish_branch: gh-pages
+          
+      - name: Create Release
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Build ${{ github.run_number }}
+          files: |
+            book/the-open-source-way.pdf
+          body: |
+            自动构建 #${{ github.run_number }}
+            
+            - 网站: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+            - PDF: 见附件
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true

@@ -1,0 +1,24 @@
+[book]
+title = "The Open Source Way"
+authors = ["The Open Source Way Community"]
+language = "zh-cn"
+multilingual = false
+src = "content"
+
+[build]
+build-dir = "book"
+
+[output.html]
+git-repository-url = "https://github.com/theopensourcewaycn/guidebook-site"
+edit-url-template = "https://github.com/theopensourcewaycn/guidebook/edit/main/{path}"
+
+[output.html.fold]
+enable = true
+level = 0
+
+[output.html.search]
+enable = true
+
+# PDF 输出配置
+[output.pdf]
+# 需要安装 mdbook-pdf 插件
