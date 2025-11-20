@@ -18,3 +18,6 @@ level = 0
 
 [output.html.search]
 enable = true
+
+# 预处理器：处理 YAML front matter
+[preprocessor.frontmatter]
