@@ -18,7 +18,3 @@ level = 0
 
 [output.html.search]
 enable = true
-
-# PDF 输出配置
-[output.pdf]
-# 需要安装 mdbook-pdf 插件
