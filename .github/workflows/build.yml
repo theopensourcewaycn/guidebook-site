@@ -36,10 +36,7 @@ jobs:
           
       - name: Install mdbook-frontmatter
         run: |
-          mkdir -p ~/bin
-          curl -sSL https://github.com/brynbellomy/mdbook-frontmatter/releases/latest/download/mdbook-frontmatter-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C ~/bin
-          chmod +x ~/bin/mdbook-frontmatter
-          echo "$HOME/bin" >> $GITHUB_PATH
+          cargo install mdbook-frontmatter
           
       - name: Build HTML
         run: mdbook build
