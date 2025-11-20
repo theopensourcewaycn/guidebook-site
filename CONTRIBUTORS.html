@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>贡献者 - The Open Source Way</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="index.html"><strong aria-hidden="true">1.</strong> 开源之道</a></li><li class="chapter-item "><a href="presenting-the-open-source-way.html"><strong aria-hidden="true">2.</strong> 引言:呈现开源之道</a></li><li class="chapter-item "><a href="getting-started/index.html"><strong aria-hidden="true">3.</strong> 马上开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="getting-started/community-101.html"><strong aria-hidden="true">3.1.</strong> 社区入门指南</a></li><li class="chapter-item "><a href="getting-started/essentials-of-building-a-community.html"><strong aria-hidden="true">3.2.</strong> 社区建设要点</a></li><li class="chapter-item "><a href="getting-started/setting-goals.html"><strong aria-hidden="true">3.3.</strong> 设定目标</a></li><li class="chapter-item "><a href="getting-started/creating-an-open-source-product-strategy.html"><strong aria-hidden="true">3.4.</strong> 制定开源产品战略</a></li><li class="chapter-item "><a href="getting-started/new-project-checklist.html"><strong aria-hidden="true">3.5.</strong> 新项目清单</a></li></ol></li><li class="chapter-item "><a href="attracting-users/index.html"><strong aria-hidden="true">4.</strong> 吸引用户</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="attracting-users/communication-norms-in-open-source-software-projects.html"><strong aria-hidden="true">4.1.</strong> 开源项目中的沟通规范</a></li><li class="chapter-item "><a href="attracting-users/building-diverse-open-source-communities-by-making-them-includive-first.html"><strong aria-hidden="true">4.2.</strong> 构建多元化的开源社区：以确保社区具有包容性为首</a></li></ol></li><li class="chapter-item "><a href="guiding-participants/index.html"><strong aria-hidden="true">5.</strong> 指导参与者</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="guiding-participants/why-people-participate-in-open-source-communities.html"><strong aria-hidden="true">5.1.</strong> 人们为什么参与开源社区</a></li><li class="chapter-item "><a href="guiding-participants/incentivizing-and-rewarding-participants.html"><strong aria-hidden="true">5.2.</strong> 激励和奖励参与者</a></li></ol></li><li class="chapter-item "><a href="growing-contributors/index.html"><strong aria-hidden="true">6.</strong> 贡献者不断增加</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="growing-contributors/from-users-to-contributors.html"><strong aria-hidden="true">6.1.</strong> 从用户到贡献者</a></li><li class="chapter-item "><a href="growing-contributors/what-is-a-contribution.html"><strong aria-hidden="true">6.2.</strong> 什么是贡献？</a></li><li class="chapter-item "><a href="growing-contributors/constructing-an-onboarding-experience.html"><strong aria-hidden="true">6.3.</strong> 构建新用户引导体验</a></li><li class="chapter-item "><a href="growing-contributors/creating-a-culture-of-mentorship.html"><strong aria-hidden="true">6.4.</strong> 创造指导文化</a></li><li class="chapter-item "><a href="growing-contributors/project-and-community-governance.html"><strong aria-hidden="true">6.5.</strong> 项目和社区治理</a></li><li class="chapter-item "><a href="growing-contributors/understanding-community-roles.html"><strong aria-hidden="true">6.6.</strong> 了解社区角色</a></li><li class="chapter-item "><a href="growing-contributors/community-manager-self-care.html"><strong aria-hidden="true">6.7.</strong> 社区管理者的自我关护</a></li></ol></li><li class="chapter-item "><a href="measuring-success/index.html"><strong aria-hidden="true">7.</strong> 衡量成功</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="measuring-success/defining-healthy-communities.html"><strong aria-hidden="true">7.1.</strong> 定义健康社区</a></li><li class="chapter-item "><a href="measuring-success/understanding-community-metrics.html"><strong aria-hidden="true">7.2.</strong> 了解社区指标</a></li><li class="chapter-item "><a href="measuring-success/announcing-software-releases.html"><strong aria-hidden="true">7.3.</strong> 宣布软件发布</a></li></ol></li><li class="chapter-item expanded "><a href="CONTRIBUTORS.html" class="active"><strong aria-hidden="true">8.</strong> 贡献者</a></li><li class="chapter-item "><a href="LICENSE.html"><strong aria-hidden="true">9.</strong> 许可证</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Open Source Way</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook-site" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook/edit/main/content/CONTRIBUTORS.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="贡献者"><a class="header" href="#贡献者">贡献者</a></h1>
+<h2 id="章节作者"><a class="header" href="#章节作者">章节作者</a></h2>
+<ul>
+<li>引言: 呈现 开源之道
+<ul>
+<li>作者：<a href="mailto:kwade@redhat.com">Karsten Wade</a></li>
+</ul>
+</li>
+<li>社区入门指南
+<ul>
+<li>作者：<a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a>, <a href="mailto:dneary@redhat.com">Dave Neary</a>, <a href="mailto:kwade@redhat.com">Karsten Wade</a></li>
+</ul>
+</li>
+<li>新项目清单
+<ul>
+<li>作者：<a href="mailto:lcaywood@redhat.com">Lisa Caywood</a>, <a href="mailto:jberkus@redhat.com">Josh Berkus</a>, <a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a>, <a href="mailto:kwade@redhat.com">Karsten Wade</a></li>
+</ul>
+</li>
+<li>制定开源产品战略
+<ul>
+<li>作者：<a href="mailto:dneary@redhat.com">Dave Neary</a></li>
+</ul>
+</li>
+<li>开源软件项目中的沟通规范
+<ul>
+<li>作者：<a href="mailto:lhawthor@redhat.com">Leslie Hawthorn</a></li>
+<li>编辑/审阅：<a href="mailto:pdickers@redhat.com">Paula Dickerson</a> (主编), 编辑团队</li>
+</ul>
+</li>
+<li>构建多元化的开源社区：以确保社区具有包容性为首
+<ul>
+<li>作者：<a href="mailto:laurenmaffeo8@gmail.com">Lauren Maffeo</a></li>
+<li>编辑/审阅：<a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a> (主编), <a href="mailto:marinaz@redhat.com">Marina Zhurakhinskaya</a> (主题专家 (SME) 审阅), 编辑团队</li>
+</ul>
+</li>
+<li>人们为什么参与开源社区
+<ul>
+<li>作者：<a href="mailto:ghaff@redhat.com">Gordon Haff</a></li>
+<li>编辑/审阅：<a href="mailto:bkp@redhat.com">Brian Proffitt</a> (主编), 编辑团队</li>
+</ul>
+</li>
+<li>激励和奖励参与者
+<ul>
+<li>作者：<a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a></li>
+</ul>
+</li>
+<li>从用户到贡献者
+<ul>
+<li>作者：<a href="mailto:dneary@redhat.com">Dave Neary</a></li>
+</ul>
+</li>
+<li>什么是贡献？
+<ul>
+<li>作者：<a href="mailto:kwade@redhat.com">Karsten Wade</a></li>
+</ul>
+</li>
+<li>社区建设要点
+<ul>
+<li>作者：<a href="mailto:andyo@praxagora.com">Andy Oram</a></li>
+</ul>
+</li>
+<li>构建新用户引导体验
+<ul>
+<li>作者：<a href="mailto:ray@cube.dev">Ray Paik</a>, <a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a></li>
+</ul>
+</li>
+<li>创造指导文化
+<ul>
+<li>作者：<a href="mailto:kwade@redhat.com">Karsten Wade</a>, <a href="mailto:guedis@palante.co">Guedis Cardenas</a></li>
+</ul>
+</li>
+<li>项目和社区治理
+<ul>
+<li>作者：<a href="mailto:dneary@redhat.com">Dave Neary</a>, <a href="mailto:jberkus@redhat.com">Josh Berkus</a>, <a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a></li>
+<li>编辑/审阅：<a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a> (主编), 编辑团队</li>
+</ul>
+</li>
+<li>了解社区角色
+<ul>
+<li>作者：<a href="mailto:andyo@praxagora.com">Andy Oram</a>, <a href="mailto:kwade@redhat.com">Karsten Wade</a></li>
+</ul>
+</li>
+<li>社区管理者自我关护
+<ul>
+<li>作者：<a href="mailto:ashjayne.nicolson@gmail.com">Ashley Nicolson</a></li>
+<li>编辑/审阅：<a href="mailto:kwade@redhat.com">Karsten Wade</a> (lead), <a href="https://www.karenhixsonlpc.com/">Dr. Karen Hixson</a> (主题专家 (SME) 审阅), 编辑团队</li>
+</ul>
+</li>
+<li>定义健康社区
+<ul>
+<li>作者：<a href="mailto:kwade@redhat.com">Karsten Wade</a></li>
+</ul>
+</li>
+<li>了解社区指标
+<ul>
+<li>作者：<a href="mailto:ray@cube.dev">Ray Paik</a>, <a href="mailto:bkp@redhat.com">Brian Proffitt</a>, <a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a></li>
+<li>编辑/审阅：<a href="mailto:bkp@redhat.com">Brian Proffitt</a> (主编), <a href="mailto:bryan.behrenshausen@sas.com">Bryan Behrenshausen</a>, 编辑团队</li>
+</ul>
+</li>
+<li>宣布软件发布
+<ul>
+<li>作者：<a href="mailto:bkp@redhat.com">Brian Proffitt</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="项目团队"><a class="header" href="#项目团队">项目团队</a></h2>
+<h3 id="编辑团队"><a class="header" href="#编辑团队">编辑团队</a></h3>
+<ul>
+<li>Brian Proffitt (主编)</li>
+<li>Shaun McCance (主笔)</li>
+<li>Bryan Behrenshausen</li>
+<li>Paula Dickerson</li>
+<li>Karsten Wade</li>
+</ul>
+<h3 id="翻译团队"><a class="header" href="#翻译团队">翻译团队</a></h3>
+<ul>
+<li>sanchuanhehe</li>
+<li>Jun-TheTechShinobi</li>
+<li>yamaneaugust</li>
+<li>semioticrobotic</li>
+</ul>
+<h2 id="翻译注释"><a class="header" href="#翻译注释">翻译注释</a></h2>
+<ul>
+<li>release manager: 版本经理，符合行业习惯</li>
+<li>voter: 投票者（非政治选举应该用中性词汇）</li>
+<li>self-care: 自我关怀、自我关爱、自我保健→自我健康管理</li>
+<li>community manager: 社区管理者（强调manager的角色而非职位属性）</li>
+<li>pixel-stained technopeasant wretches：追流量的IT民工挂逼（贴近网络流行黑话）</li>
+<li>mentor/mentorship：指导者/指导关系（弱化从属/权威地位、制度化的语义）</li>
+<li>mentee：学习者（追求语义中性，弱化绑定意涵）</li>
+<li>Chart the waters：可以翻译成“摸底”或“试水”，试水在字面上更贴切</li>
+<li>micro-manager：控制狂（micro-manager是高情商说法的control freak）</li>
+<li>self-care：作为专业词汇时为自我照顾，结合语境应为自我健康管理</li>
+<li>burnout：很多人把它翻译成新词“倦怠”，但是语义上带有厌倦怠惰的指涉，偏离原本意涵以及和“过劳死”的联系，直接翻译成“过劳”最为恰当</li>
+<li>Intensity：文中括号解释了其为高强度工作，因此翻译成更通俗“内卷”</li>
+<li>Withdrawal：这个词特指社会性退缩，俗称“社恐”</li>
+<li>Inner Emptiness：直译为“内心空虚”，流行语“空心病”十分贴切</li>
+<li>favoritism：通常语境里是偏袒的意思，在职场里更适合翻译成“拉帮结派”</li>
+<li>Through the looking glass：对应该英文成语最贴切的是“以人为鉴”</li>
+<li>cookie licking：指拍马屁、膜拜，流行语“跪舔”在字面上更贴切</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="measuring-success/announcing-software-releases.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="LICENSE.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="measuring-success/announcing-software-releases.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="LICENSE.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

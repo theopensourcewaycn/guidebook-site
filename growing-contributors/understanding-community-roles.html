@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>了解社区角色 - The Open Source Way</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../index.html"><strong aria-hidden="true">1.</strong> 开源之道</a></li><li class="chapter-item "><a href="../presenting-the-open-source-way.html"><strong aria-hidden="true">2.</strong> 引言:呈现开源之道</a></li><li class="chapter-item "><a href="../getting-started/index.html"><strong aria-hidden="true">3.</strong> 马上开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../getting-started/community-101.html"><strong aria-hidden="true">3.1.</strong> 社区入门指南</a></li><li class="chapter-item "><a href="../getting-started/essentials-of-building-a-community.html"><strong aria-hidden="true">3.2.</strong> 社区建设要点</a></li><li class="chapter-item "><a href="../getting-started/setting-goals.html"><strong aria-hidden="true">3.3.</strong> 设定目标</a></li><li class="chapter-item "><a href="../getting-started/creating-an-open-source-product-strategy.html"><strong aria-hidden="true">3.4.</strong> 制定开源产品战略</a></li><li class="chapter-item "><a href="../getting-started/new-project-checklist.html"><strong aria-hidden="true">3.5.</strong> 新项目清单</a></li></ol></li><li class="chapter-item "><a href="../attracting-users/index.html"><strong aria-hidden="true">4.</strong> 吸引用户</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../attracting-users/communication-norms-in-open-source-software-projects.html"><strong aria-hidden="true">4.1.</strong> 开源项目中的沟通规范</a></li><li class="chapter-item "><a href="../attracting-users/building-diverse-open-source-communities-by-making-them-includive-first.html"><strong aria-hidden="true">4.2.</strong> 构建多元化的开源社区：以确保社区具有包容性为首</a></li></ol></li><li class="chapter-item "><a href="../guiding-participants/index.html"><strong aria-hidden="true">5.</strong> 指导参与者</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../guiding-participants/why-people-participate-in-open-source-communities.html"><strong aria-hidden="true">5.1.</strong> 人们为什么参与开源社区</a></li><li class="chapter-item "><a href="../guiding-participants/incentivizing-and-rewarding-participants.html"><strong aria-hidden="true">5.2.</strong> 激励和奖励参与者</a></li></ol></li><li class="chapter-item expanded "><a href="../growing-contributors/index.html"><strong aria-hidden="true">6.</strong> 贡献者不断增加</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../growing-contributors/from-users-to-contributors.html"><strong aria-hidden="true">6.1.</strong> 从用户到贡献者</a></li><li class="chapter-item "><a href="../growing-contributors/what-is-a-contribution.html"><strong aria-hidden="true">6.2.</strong> 什么是贡献？</a></li><li class="chapter-item "><a href="../growing-contributors/constructing-an-onboarding-experience.html"><strong aria-hidden="true">6.3.</strong> 构建新用户引导体验</a></li><li class="chapter-item "><a href="../growing-contributors/creating-a-culture-of-mentorship.html"><strong aria-hidden="true">6.4.</strong> 创造指导文化</a></li><li class="chapter-item "><a href="../growing-contributors/project-and-community-governance.html"><strong aria-hidden="true">6.5.</strong> 项目和社区治理</a></li><li class="chapter-item expanded "><a href="../growing-contributors/understanding-community-roles.html" class="active"><strong aria-hidden="true">6.6.</strong> 了解社区角色</a></li><li class="chapter-item "><a href="../growing-contributors/community-manager-self-care.html"><strong aria-hidden="true">6.7.</strong> 社区管理者的自我关护</a></li></ol></li><li class="chapter-item "><a href="../measuring-success/index.html"><strong aria-hidden="true">7.</strong> 衡量成功</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../measuring-success/defining-healthy-communities.html"><strong aria-hidden="true">7.1.</strong> 定义健康社区</a></li><li class="chapter-item "><a href="../measuring-success/understanding-community-metrics.html"><strong aria-hidden="true">7.2.</strong> 了解社区指标</a></li><li class="chapter-item "><a href="../measuring-success/announcing-software-releases.html"><strong aria-hidden="true">7.3.</strong> 宣布软件发布</a></li></ol></li><li class="chapter-item "><a href="../CONTRIBUTORS.html"><strong aria-hidden="true">8.</strong> 贡献者</a></li><li class="chapter-item "><a href="../LICENSE.html"><strong aria-hidden="true">9.</strong> 许可证</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Open Source Way</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook-site" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook/edit/main/content/growing-contributors/understanding-community-roles.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>description:
+author: Andy Oram <a href="mailto:andyo@praxagora.com">andyo@praxagora.com</a>, Karsten Wade <a href="mailto:kwade@redhat.com">kwade@redhat.com</a>
+updated: 2020-12-12</h2>
+<h1 id="理解社区角色"><a class="header" href="#理解社区角色">理解社区角色</a></h1>
+<p>在开源社区中，个体角色的界定取决于其参与方式、协作模式以及对社区及各类社区产出的贡献。人们常误以为为开源项目贡献价值的唯一或最佳方式就是编写代码，这其实是一种普遍存在的误解。有句谚语道："所有贡献都具有同等价值"，这恰当地概括了最可取的态度。</p>
+<p>其中一部分原因在于我们根本无法预知未来——你确实无法预判哪项贡献或哪位贡献者将对项目产生持久影响。例如，大量微小贡献的累积效应，很可能与少数几个引人注目的大型贡献产生同等影响力。某位参与者可能只是短暂参加了用户体验研讨会，却在无意间通过这次短暂互动提供了具有持久价值的见解。</p>
+<p>所有贡献应被平等对待的核心意义在于：社区由人组成，而这些人的情感与体验本质上就是社区本身。每个人为社区带来的贡献——无论大小——都成为项目中极具个人色彩的"货币"，通过这些贡献，我们能辨识谁在哪些方面值得信赖。</p>
+<p>在一个开放包容的社区中，随着成员技能的持续成长，无论其贡献性质如何，其影响力终将超越个体局限。当人们被允许突破角色边界、不断挑战自我时，他们就能释放最大潜能。这种"被允许"体现在：消除对不同类型贡献的价值评判、等级差异乃至羞耻感。</p>
+<p>因此，这是一种认同所有人具有平等价值的方式，他们每日的付出都应被视作当下人性最美好的体现。这种包容之道意义深远，它允许人们成为百分之百的贡献者——无论他们在特定日子里以何种方式参与或表现。</p>
+<h2 id="贡献方式"><a class="header" href="#贡献方式">贡献方式</a></h2>
+<p>思考如何为你希望加入的项目或团体作出贡献永远不会太早。这样做不仅能推动项目更好地满足你和所有用户的需求，还能让你获得认可、在安全环境中提升技能，并通过合作者拓展人脉网络。</p>
+<p>本文档涵盖了贡献者扮演的多种角色。你或许会感兴趣：学术论文的<a href="http://credit.niso.org/">CRediT</a>项目对这些角色有着怎样相似或不同的定义。</p>
+<h3 id="文档撰写"><a class="header" href="#文档撰写">文档撰写</a></h3>
+<p>文档资料与培训材料对于新人招募和团队新成员快速上手至关重要。编写技术文档是最被低估的重要贡献之一。正如<a href="http://www.praxagora.com/andyo/professional/documentation_conversations.html">某位博主所言</a>："计算机文档长期处于类似政府拨款的尴尬境地：没人愿意出力编写，但每个人都希望需要时能随手可得。"本节将逐步指导你如何创建文档。</p>
+<h4 id="提议一份文档"><a class="header" href="#提议一份文档">提议一份文档</a></h4>
+<p>如果你发现某个项目或团队的文档存在缺失，可以直接联系项目负责人或在社区论坛询问是否有人正在撰写相关主题的文档。在 GitHub 和 GitLab 等支持"问题追踪"的平台上，你也可以通过创建 issue 来申请文档，但更简单的做法是先非正式地询问是否已有人在编写此类文档。</p>
+<p>若发现已有人正在编写你认为必要的文档，可以主动申请成为审阅者。有时你甚至能以作者身份参与协作，但作者必须注意清晰明确地划分不同作者负责的主题范围。文档的模块化程度通常不如软件代码。</p>
+<p>如果确认无人撰写该文档，且社区或项目负责人支持创建新文档，接下来要考虑的是：谁是最合适的作者？通常答案就是：你自己。虽然可能有其他更熟悉该主题的专家，但如果他们尚未创建这份文档，很可能是因为忙于其他事务、不擅长写作或其他原因。最理想的作者就是有撰写意愿的人，既然你提出了这个需求，很可能你就是最佳人选。主题专家可以为你提供思路并审核文稿。</p>
+<p>此时应当正式发布公告，例如通过创建问题。建议设定截止日期以施加完成文档的压力。需注意文档需要经过评审，这可能会使项目延长数周。建立里程碑也很有帮助，例如：</p>
+<ol>
+<li>开始撰写</li>
+<li>分发初稿征求意见</li>
+<li>初稿审阅周期结束</li>
+<li>终稿传阅</li>
+<li>终稿审阅周期结束</li>
+<li>提交审核</li>
+<li>审核通过并发布</li>
+</ol>
+<p>项目文档需经项目负责人或顾问团队批准后方可纳入。这些领导者应以开放态度审批文档项目，因为任何与项目相关的新文档通常都能为部分成员带来价值。</p>
+<h4 id="成为作者"><a class="header" href="#成为作者">成为作者</a></h4>
+<p>获得领导层批准撰写文件后，请按以下步骤操作。</p>
+<h4 id="学习使用工具"><a class="header" href="#学习使用工具">学习使用工具</a></h4>
+<p>了解团队偏好的文档格式（如 Asciidoc、Markdown 等）。大多数项目会将文档像源代码文件一样集成管理，这样项目组就无需为文档相关任务（如提交文档错误报告）专门开发特殊工具和流程。</p>
+<h4 id="熟悉相关文档资料"><a class="header" href="#熟悉相关文档资料">熟悉相关文档资料</a></h4>
+<p>在研究是否需要新文档时，你可能已查阅过项目现有文档。在开始撰写前，你还应进行网络搜索，查看类似项目的文档资料。收集相关文档链接及其他辅助材料（如为读者提供背景知识的视频，或文档阅读后可深入研究的进阶信息来源）。</p>
+<p>查阅由你的项目或其他类似主题项目编写的现有文档，或许能帮助你快速入门。寻找针对与你目标受众（如开发者、终端用户等）相匹配的群体所撰写的文档。</p>
+<h4 id="写作标准"><a class="header" href="#写作标准">写作标准</a></h4>
+<p>写作是一项需要不同熟练程度的技能，但遵循一些基本准则能帮助经验不足的作者撰写出实用的文档。</p>
+<ul>
+<li>始终考虑你的写作对象。选定主题后，明确受众是文档规划中最重要的环节。不妨自问：大多数读者是否理解我使用的专业术语？终端用户是否需要了解开发者讨论的技术细节？在讲解资源使用方法前，是否需要先说明如何找到该网页或其他资源？</li>
+<li>尽量将操作指南分解为分步骤的流程说明。这类分步指南通常最容易遵循，特别是当以有序列表形式呈现时。切勿仅凭记忆撰写：务必在编写时亲自操作一遍流程。否则，几乎肯定会遗漏某个步骤或出现描述错误。</li>
+<li>构建文档结构。保持句子简短。尝试拆分长段落。频繁设置新标题。如果你发现某个章节写了十几段甚至更多，却不知如何将其拆分为更小的部分，那你可能在组织一篇结构混乱、行文不畅的草稿。</li>
+</ul>
+<h4 id="文档撰写阶段"><a class="header" href="#文档撰写阶段">文档撰写阶段</a></h4>
+<p>通常，作者在撰写文档前应提交大纲供评审。大纲能确保涵盖所有重要主题，同时避免包含不必要的内容。评审者也可提出结构调整建议。但作者在实际撰写时，往往会找到理由新增主题或调整其位置。</p>
+<p>相关文档引用是大多数文档的重要组成部分。正如前文所述，作者应当通过调查研究找到相关文档并予以收录。内联链接尤其有助于引导读者了解背景知识——当他们需要学习某些基础知识才能理解文档时。不过，通常在文档末尾提供参考资料章节最为实用。</p>
+<h4 id="审阅文档"><a class="header" href="#审阅文档">审阅文档</a></h4>
+<p>文档审阅采用众包模式，这意味着我们欢迎来自不同知识背景、能力水平、专业培训、种族、性别、地理位置等多元人群的审阅意见。这种方式能显著提升文档的价值与可读性。</p>
+<p>你可以指出你认为不正确或遗漏的内容。请理解我们尽量保持文档简洁，以便忙碌的人们有时间阅读。提供优质文档和其他资源的参考信息非常有价值。</p>
+<p>编辑、校对和拼写检查同样是宝贵的贡献方式。</p>
+<p>审阅文档是熟悉我们语气与风格的绝佳途径，为日后撰写自己的文件做好准备。</p>
+<h3 id="参与指导委员会工作"><a class="header" href="#参与指导委员会工作">参与指导委员会工作</a></h3>
+<p>这些委员会也需要领导者。经过数月的参与后，我们希望你能考虑承担领导职责。虽然具备与团队目标相关的专业知识很有帮助，但领导者也可以通过协调成员任务、主持会议以及处理其他组织事务来发挥作用。</p>
+<h3 id="招募其他志愿者"><a class="header" href="#招募其他志愿者">招募其他志愿者</a></h3>
+<p>来自受尊敬的朋友或同事的个人邀请，是招募新团队成员最有效的方式。当你发现一个自己支持的项目时，不妨思考哪些人会成为团队的宝贵补充。在你充分了解项目目标及团队运作方式后，就可以主动联系潜在的新成员。</p>
+<h3 id="对志愿者的一般指导"><a class="header" href="#对志愿者的一般指导">对志愿者的一般指导</a></h3>
+<p>大多数志愿者都能为项目带来实用知识，并在参与过程中不断学习。你可以通过多种方式分享这些知识：在论坛和聊天中回答问题、指导他人，以及参加小组会议。</p>
+<h3 id="翻译软件和文档"><a class="header" href="#翻译软件和文档">翻译软件和文档</a></h3>
+<p><strong>什么是翻译？</strong><br />
+将软件界面和文档转换为另一种语言。最终成果是一个经过本地化的软件包，让人们能够以自己偏好的语言阅读界面和文档。</p>
+<p><strong>翻译人员做什么？</strong><br />
+运用工具和流程将软件界面、文档、营销材料、版本说明等内容翻译为一种或多种语言。许多项目采用通用流程或模式，因此在一个软件项目中学习的翻译技能往往可复用于其他项目。诸如 Fedora Linux 等 Linux 发行版就拥有专门翻译操作系统各组成部分的翻译者团队，将其译为数十种语言。</p>
+<p><strong>为什么人们喜欢这个角色？</strong><br />
+许多人通过将软件和文档翻译成本地语言，为开源软件的传播做出了贡献。他们以此方式将自由开源软件的益处带给本地社区。</p>
+<h3 id="协助管理项目系统"><a class="header" href="#协助管理项目系统">协助管理项目系统</a></h3>
+<p><strong>什么是系统管理？</strong><br />
+代表项目创建和维护可运行的计算机系统。根据现有系统和规划需求，该角色可能需要具备系统管理员/运维/DevOps 等多方面的经验。</p>
+<p><strong>系统管理员负责哪些工作？</strong><br />
+负责项目底层基础设施的各方面工作。这些基础设施为项目参与和协作提供支持途径。</p>
+<p><strong>为什么人们喜欢这个角色？</strong><br />
+学习新技能并接触新技术。通常人们即使没有专业经验，也会对此类工作抱有倾向或将其作为严肃的爱好。特别是在现代自动化技术影响下，系统管理员的角色正在持续演变。</p>
+<h3 id="筹款和组织赞助"><a class="header" href="#筹款和组织赞助">筹款和组织赞助</a></h3>
+<p><strong>什么是筹款？</strong><br />
+这是指寻找有意向为项目及社区捐赠资金、硬件或服务的个人与组织的行为。赞助形式多种多样。对于无法接收现金捐赠的项目，赞助通常表现为活动参与机会、差旅支持、展位人员协助等形式。</p>
+<p><strong>筹款人具体做什么？</strong><br />
+与项目负责人、基金会等上级组织以及有意捐赠和赞助的个人或机构合作。这包括处理赞助细节，无论是一次性捐赠还是持续筹款活动的一部分，以敲定协议条款。可能还涉及后续对赞助资金、拨款或其他形式捐赠的管理工作。</p>
+<p><strong>为什么人们喜欢这个角色？</strong><br />
+他们深知围绕开源社区建立可持续性的重要性，并希望有所作为。某些技能或个人特质可能使这项工作对他们个人而言更具吸引力或价值。</p>
+<h3 id="营销的工作范畴"><a class="header" href="#营销的工作范畴">营销的工作范畴</a></h3>
+<p><strong>什么是市场营销？</strong><br />
+在开源软件领域，市场营销是指推广社区及其软件成果的行为。其他实践（如市场调研和广告）通常不会在社区内部进行。</p>
+<p><strong>营销人员做什么？</strong><br />
+他们与项目的各个部门协作，帮助团队理解用户的需求与期望，进而将这些信息简化并广泛传播。在开源领域，用户反馈通常以错误报告和求助形式直接流向开发团队。与封闭式软件开发模式不同，最熟悉内容和代码的贡献者往往对用户群体有着深刻认知。营销人员能协助收集、梳理、整合这些信息，并将其转化为功能规划和路线图中的优先级事项。</p>
+<p><strong>为什么人们喜欢这个角色？</strong><br />
+那些对超越"一切皆数字化"视角的现代营销感兴趣的人，能在开源开发的核心流程中，看到与某些世界级品牌特质相呼应的真实、开放与透明——这些正是当代营销的深层魅力所在。</p>
+<h3 id="助力项目拓展推广"><a class="header" href="#助力项目拓展推广">助力项目拓展推广</a></h3>
+<p><strong>什么是外联？</strong><br />
+这项工作涉及与用户、参与者、潜在贡献者乃至整个外界建立联系。这些联系不仅限于市场营销，还可能涵盖招募、用户帮助、反馈收集、受众分析、技术支持等多个方面。</p>
+<p><strong>外联协调员做什么？</strong><br />
+直接与项目中的创作者（代码、内容、设计、市场营销等）合作，充当项目与外部各论坛之间的双向桥梁。这些论坛可能是项目维护的网站或邮件列表，也可能是博客和技术记者，或是用户提问和解答问题的网站。从事外联工作的人员需要对项目的几乎所有方面有一定程度的了解，能够识别并建立项目各部分与外部世界的联系。</p>
+<p><strong>为什么人们喜欢这个角色？</strong><br />
+这个角色需要深入了解人员和流程，并围绕它们进行沟通。它提供了一个机会，让那些可能在项目中默默无闻的人得以发声，帮助将这些声音带到台前。</p>
+<h3 id="专注于社区赋能管理和架构建设"><a class="header" href="#专注于社区赋能管理和架构建设">专注于社区赋能、管理和架构建设</a></h3>
+<p><strong>什么是社区架构（及其他相关概念）？</strong><br />
+鉴于开源项目的成功既取决于代码库也依赖于社区，大多数项目都会安排人员（正式或非正式地）承担起设计和维护社区本身的首要职责。</p>
+<p><strong>社区架构师负责什么工作？</strong><br />
+作为该角色的核心职责，此人需要了解并监督或直接实施本指南中的诸多最佳实践。当这一角色由多人分担或仅为兼职配置时，相关成员通常会聚焦于与项目最密切相关的实践领域。通过这种方式，即便社区管理/赋能资源有限的项目，最终也能完成关键环节的工作。</p>
+<p><strong>为什么人们喜欢这个角色？</strong><br />
+这个角色适合那些喜欢沟通、协作和连接他人的人。如果你能从见证他人成功（当然也包括帮助庆祝这些成功）中获得与自己成功时相同的快乐，那么这个角色会很适合你。这个角色也吸引那些对处理多种多样事务感兴趣且擅长的人（即多面手）。</p>
+<h2 id="其他技术角色"><a class="header" href="#其他技术角色">其他技术角色</a></h2>
+<p>能够为某一领域编写的软件种类繁多，这让我们对哪些内容适合纳入此处有了一定概念。这可能意味着需要特定的技术技能，比如地理信息系统（GIS）项目中需要地理学家的专业知识。这也可能涉及通用的技术能力，这在解决复杂问题时通常是必需的。</p>
+<h2 id="结论"><a class="header" href="#结论">结论</a></h2>
+<p>本章列举了开源项目中人们可以担任的一些角色示例。这份清单虽非详尽无遗，但针对所列角色，它提供了关于这些角色的职责以及人们为何承担这些角色的基本概念。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../growing-contributors/project-and-community-governance.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../growing-contributors/community-manager-self-care.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../growing-contributors/project-and-community-governance.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../growing-contributors/community-manager-self-care.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

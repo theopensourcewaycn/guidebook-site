@@ -1,0 +1,303 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>设定目标 - The Open Source Way</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../index.html"><strong aria-hidden="true">1.</strong> 开源之道</a></li><li class="chapter-item "><a href="../presenting-the-open-source-way.html"><strong aria-hidden="true">2.</strong> 引言:呈现开源之道</a></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">3.</strong> 马上开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../getting-started/community-101.html"><strong aria-hidden="true">3.1.</strong> 社区入门指南</a></li><li class="chapter-item "><a href="../getting-started/essentials-of-building-a-community.html"><strong aria-hidden="true">3.2.</strong> 社区建设要点</a></li><li class="chapter-item expanded "><a href="../getting-started/setting-goals.html" class="active"><strong aria-hidden="true">3.3.</strong> 设定目标</a></li><li class="chapter-item "><a href="../getting-started/creating-an-open-source-product-strategy.html"><strong aria-hidden="true">3.4.</strong> 制定开源产品战略</a></li><li class="chapter-item "><a href="../getting-started/new-project-checklist.html"><strong aria-hidden="true">3.5.</strong> 新项目清单</a></li></ol></li><li class="chapter-item "><a href="../attracting-users/index.html"><strong aria-hidden="true">4.</strong> 吸引用户</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../attracting-users/communication-norms-in-open-source-software-projects.html"><strong aria-hidden="true">4.1.</strong> 开源项目中的沟通规范</a></li><li class="chapter-item "><a href="../attracting-users/building-diverse-open-source-communities-by-making-them-includive-first.html"><strong aria-hidden="true">4.2.</strong> 构建多元化的开源社区：以确保社区具有包容性为首</a></li></ol></li><li class="chapter-item "><a href="../guiding-participants/index.html"><strong aria-hidden="true">5.</strong> 指导参与者</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../guiding-participants/why-people-participate-in-open-source-communities.html"><strong aria-hidden="true">5.1.</strong> 人们为什么参与开源社区</a></li><li class="chapter-item "><a href="../guiding-participants/incentivizing-and-rewarding-participants.html"><strong aria-hidden="true">5.2.</strong> 激励和奖励参与者</a></li></ol></li><li class="chapter-item "><a href="../growing-contributors/index.html"><strong aria-hidden="true">6.</strong> 贡献者不断增加</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../growing-contributors/from-users-to-contributors.html"><strong aria-hidden="true">6.1.</strong> 从用户到贡献者</a></li><li class="chapter-item "><a href="../growing-contributors/what-is-a-contribution.html"><strong aria-hidden="true">6.2.</strong> 什么是贡献？</a></li><li class="chapter-item "><a href="../growing-contributors/constructing-an-onboarding-experience.html"><strong aria-hidden="true">6.3.</strong> 构建新用户引导体验</a></li><li class="chapter-item "><a href="../growing-contributors/creating-a-culture-of-mentorship.html"><strong aria-hidden="true">6.4.</strong> 创造指导文化</a></li><li class="chapter-item "><a href="../growing-contributors/project-and-community-governance.html"><strong aria-hidden="true">6.5.</strong> 项目和社区治理</a></li><li class="chapter-item "><a href="../growing-contributors/understanding-community-roles.html"><strong aria-hidden="true">6.6.</strong> 了解社区角色</a></li><li class="chapter-item "><a href="../growing-contributors/community-manager-self-care.html"><strong aria-hidden="true">6.7.</strong> 社区管理者的自我关护</a></li></ol></li><li class="chapter-item "><a href="../measuring-success/index.html"><strong aria-hidden="true">7.</strong> 衡量成功</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../measuring-success/defining-healthy-communities.html"><strong aria-hidden="true">7.1.</strong> 定义健康社区</a></li><li class="chapter-item "><a href="../measuring-success/understanding-community-metrics.html"><strong aria-hidden="true">7.2.</strong> 了解社区指标</a></li><li class="chapter-item "><a href="../measuring-success/announcing-software-releases.html"><strong aria-hidden="true">7.3.</strong> 宣布软件发布</a></li></ol></li><li class="chapter-item "><a href="../CONTRIBUTORS.html"><strong aria-hidden="true">8.</strong> 贡献者</a></li><li class="chapter-item "><a href="../LICENSE.html"><strong aria-hidden="true">9.</strong> 许可证</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Open Source Way</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook-site" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook/edit/main/content/getting-started/setting-goals.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>description:
+author: Dave Neary <a href="mailto:dneary@redhat.com">dneary@redhat.com</a>
+updated: 2025-05-21T00:00:00.000Z</h2>
+<h1 id="设定目标"><a class="header" href="#设定目标">设定目标</a></h1>
+<p>任何为开源社区提供项目目标建议的人，可能会发现自己反复向项目负责人提出相同的基础问题。本章概述了社区在明确项目目标时可自我提问的七个最常见问题：</p>
+<ol>
+<li>项目是什么？</li>
+<li>项目的用户群体是谁？</li>
+<li>目前如何与用户群体互动？</li>
+<li>你的项目存在什么替代方案？</li>
+<li>你能与相关项目紧密合作吗？</li>
+<li>你对这个项目的目标是什么？</li>
+<li>谁是你的关键利益相关者？</li>
+</ol>
+<h2 id="项目是什么"><a class="header" href="#项目是什么">项目是什么？</a></h2>
+<p>这似乎是个非常基础的问题。但它的答案往往并不简单。开源项目常常用许多潜在用户不熟悉的术语来描述自己，或者专注于它们于_如何_实现功能，而非它们能解决什么_问题_。思考这个问题的可能答案时，要聚焦于_项目如何帮助其用户_。它能解决什么痛点？用最简练的语言，你会如何向潜在用户描述你的项目？</p>
+<p>举例来说，假设我们询问 Istio 开发者什么是 Istio。最基础的答案是"这是个服务网格"。但有人可能会反驳，大多数容器应用开发者并不完全理解"服务网格"的含义。因此这个简略描述——"这是个服务网格！"——并不能帮助新手判断是否需要使用或如何使用它。更好的解释可能是：用应用数据平面和控制平面来描述 Istio（如果对方来自网络领域），或是用"分配给应用组件的交通警察"这样的概念（如果向不了解服务网格的人解释该项目）。</p>
+<p>根据社区需求提出尽可能多的后续问题，以形成对项目及其功能的简单直接理解。</p>
+<h2 id="项目的用户群体是谁"><a class="header" href="#项目的用户群体是谁">项目的用户群体是谁？</a></h2>
+<p>许多开源项目并不清楚谁在使用他们的项目，以及这些用户如何利用项目工具。建议采用"用户画像"概念来刻画关键用户的典型群体，并确保从"待完成的任务"角度进行思考。</p>
+<p>你可以通过多项标准对项目潜在或现有用户进行分类：</p>
+<ul>
+<li>该项目对个人更有用，还是对组织更有用？</li>
+<li>你的项目是否在特定行业领域或商业场景中特别有用？</li>
+<li>什么规模的组织会觉得你的项目最有用？你的目标用户是大型企业的系统管理员，还是中小型企业？</li>
+<li>哪些人会下载、安装并使用你的项目？他们的职位头衔是什么？他们是同一批人吗？还是说用户与项目管理员不同？</li>
+<li>开源项目的下载安装者与商业产品的评估采购者之间存在怎样的关系？</li>
+</ul>
+<p>这些问题的答案将影响社区在项目架构、推广乃至特定功能开发投入力度上的优先级排序。例如，若项目运行于数据中心或服务器集群，目标用户通常是企业用户——专业从事 IT 运维的人员（或大学志愿者）。而对于移动应用或网页开发框架，多数用户会在个人电脑、工作站或手机上运行项目。不同用户群体对资源的需求各异，驱动他们使用项目及工具的痛点也各不相同。</p>
+<p>此外，任何有意制定开源_产品_战略的人都应进一步思考项目_用户_和产品_买家_之间的关键关系。企业采用开源技术通常不会沿着"直接使用上游开源项目→转向企业级开源产品"的直线路径发展。开源采用往往是"草根式"自下而上推进；而企业级开源产品的评估采购则多呈现自上而下的特征。当企业内部采用某开源项目的人员能参与采购决策咨询——无论是因其与采购流程有直接联系，还是因为采购负责人知晓公司已在用该产品——这些人都可能成为极具价值的影响者。</p>
+<h2 id="目前如何与用户群体互动"><a class="header" href="#目前如何与用户群体互动">目前如何与用户群体互动？</a></h2>
+<p>当人们开始关注你的项目时，有效互动是扩大项目用户基础和社区规模的关键。你可以通过多种方式与用户建立联系，每种方式所需投入的精力不同，产生的效果也各异。</p>
+<p>确定应该将精力集中在何处可能很困难。因此，盘点当前与项目用户互动的所有方式非常有用，这有助于发现盲点和改进机会。不妨将互动方式划分为"低接触"、"中接触"和"高接触"（该术语借鉴自销售领域）<strong>低接触</strong>方式意味着潜在用户与社区之间极少互动，而<strong>高接触</strong>则代表一对一的深度交流或小范围互动。</p>
+<p>以下是可以按此分类的典型方式示例：</p>
+<ul>
+<li><strong>低接触</strong>：网站、文档、在线培训、新闻通讯、播客、博客</li>
+<li><strong>中接触</strong>：邮件列表、缺陷追踪系统、社区论坛、会议演讲、网络研讨会、用户群组</li>
+<li><strong>高接触</strong>：电话沟通、一对一或小规模培训、会议交流、社区聚会</li>
+</ul>
+<p>理想情况下，你的项目应均衡融合这些要素。完善网站、文档和宣传材料能让新用户自主操作，无需资深社区成员过多协助。通过缺陷追踪系统、邮件列表和论坛，社区成员可参与互动、提问并提供反馈，这类活动有助于深入了解用户如何使用你的项目。最后，培训课程、会议展台值守与跟进、面对面交流等高投入活动在一对一场景中极具价值——但这些方式的扩展性较为有限。</p>
+<p>"销售漏斗"模型或许能为思考参与活动和项目目标的社区提供参考。</p>
+<p>低接触活动非常适合提升项目知名度并吸引初次关注者。确保网站和其他材料清晰传达项目功能、如何帮助用户以及贡献者如何快速试用和上手至关重要。中接触活动能有效为项目打造"引力中心"——不仅实现与用户的沟通，还能促使用户间互助（有望产生网络效应）。而高接触活动则有利于与核心社区用户建立关系、收集社区案例研究，并帮助大型群体高效利用项目资源，最终成为项目倡导者。</p>
+<p>团队在规划潜在参与路径时，一个关键考量是：<em>如何让不熟悉项目的人开始使用它</em>，并随着时间的推移逐步提升在项目中的地位，最终成为核心贡献者。</p>
+<h2 id="你的项目存在什么替代方案"><a class="header" href="#你的项目存在什么替代方案">你的项目存在什么替代方案？</a></h2>
+<p>通过评估项目的竞争对手或人们完成相同（或类似）任务时使用的其他项目，你能获得许多洞见。不妨思考以下问题：</p>
+<ul>
+<li>如果你的项目没有任何竞争对手，原因是什么？</li>
+<li>是否属于新兴技术领域？</li>
+<li>人们是否正在使用类似项目来完成本可通过你的项目实现的工作——只是方式不同？</li>
+<li>如果其他项目做着相同的工作但没有明确的领导者，他们处理问题的方式与你有何不同？</li>
+<li>如果你的项目存在开源竞争对手，加入他们（而非与之竞争）是否可行？如果不可行，原因何在？</li>
+<li>如果竞争对手已在市场中占据主导地位，你能了解到他们及其客户的哪些信息？</li>
+<li>你的竞争对手的客户是谁？他们有什么共同点？</li>
+<li>人们使用竞争项目的动机是什么？</li>
+</ul>
+<p>分析竞争对手能帮助你在项目目标设定初期回答若干关键问题，而解答这些问题将为社区后续确定功能优先级和制定潜在用户触达策略提供依据。例如，你可以借力竞争对手技术爱好者现有的聚会活动，在这些场合传播你的理念。若你属于颠覆式创新者，你的目标与宣传话术可能需要围绕竞品展开："比 XX 更便宜"、"XX 的开源替代方案"、"比 XX 更简单快速"。若身处新兴市场且项目正处于"跑马圈地"阶段，你就需要快速扩大声量——这意味着更高的营销预算或更激进的社区计划，同时要更聚焦于阐明项目能为潜在用户解决哪些痛点。</p>
+<h2 id="你能与相关项目紧密合作吗"><a class="header" href="#你能与相关项目紧密合作吗">你能与相关项目紧密合作吗？</a></h2>
+<p>如果你的软件常被其他项目的用户使用或对其特别有用，那么在项目初期你可能会发现提升项目知名度、更深入了解用户需求的机遇。例如，Ceph 能为 OpenStack 或 Kubernetes 提供存储管理；对 Ceph 而言，OpenStack 和 Kubernetes 就是相邻社区。通过服务相邻项目来寻找受众，可能会影响你的技术路线规划、目标活动选择，以及在特定集成项目上的投入力度等。相邻项目为你提供了潜在友好受众，他们正面临你的技术能解决的问题，因此你可以开展联合市场调研或用户体验测试，或协调联合活动来接触潜在用户。这与理解竞争格局也息息相关——对他们重要的社区，对你同样重要。</p>
+<h2 id="你对项目的目标是什么"><a class="header" href="#你对项目的目标是什么">你对项目的目标是什么？</a></h2>
+<p>每个开源项目存在的根本问题是：“这个项目为何存在？”具体而言，对于由供应商发布或推动的项目，这个问题则变为：“我们希望通过投资这个项目达成什么目标？”</p>
+<p>令人惊讶的是，许多项目都难以回答这个问题。</p>
+<p>作为供应商，请问：你们最初为何要将这款软件开源？是为了开拓市场、推广标准、打击竞争对手，还是为了提升产品组合中其他产品的需求？每种目标都需要传递不同的信息并采取不同的投入策略。</p>
+<p>理解开源项目的原因将有助于明确实现目标所需的投入，确保项目、产品和销售团队在未来保持目标一致。若缺乏对项目目标的共同愿景，可能会导致开源项目资金不足，部分原因在于人们认为它与基于该项目构建的产品存在竞争。优秀的开源产品策略能清晰界定目标市场、产品与项目间的市场划分，以及项目在整个商业战略和产品组合中的角色。明确这些要点将在未来的技术路线图讨论中带来回报，或在社区推广与销售线索生成的优先级权衡中发挥积极作用。</p>
+<h2 id="谁是你的关键利益相关者"><a class="header" href="#谁是你的关键利益相关者">谁是你的关键利益相关者？</a></h2>
+<p>会对你项目极为关注的小部分人，他们能代表影响该项目的群体或利益方。这些人就是你的利益相关者。</p>
+<p>对于供应商赞助的项目，这类人群通常包括项目负责人、产品经理、产品市场人员以及一线代表（现场工程师、销售人员）。你可能还需要将内容服务或支持团队的人员以及产品安全部门的代表纳入其中。这个群体就是你为利益相关方评审会需要汇报的对象，应当每 6 到 12 个月召集他们一次，同步项目进展状态，确保各方对目标及实现这些目标所需投入达成共识。</p>
+<h2 id="审视成果"><a class="header" href="#审视成果">审视成果</a></h2>
+<p>回答这七个问题可以形成一份单页文档，为任何项目规划讨论提供基准和参考框架。完成这项练习后，你的团队或社区应对项目解决的问题及目标用户达成共识。你将能够用潜在用户熟悉的语言传达项目价值，理解项目在市场中的定位及预期目标，并明确组织内部哪些关键群体需要与项目现状及未来战略保持一致。</p>
+<p>综合这七个问题的答案，项目的后续方向对所有参与者而言将变得清晰明了——而你的社区也将准备好助力项目实现目标。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../getting-started/essentials-of-building-a-community.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../getting-started/creating-an-open-source-product-strategy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../getting-started/essentials-of-building-a-community.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../getting-started/creating-an-open-source-product-strategy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

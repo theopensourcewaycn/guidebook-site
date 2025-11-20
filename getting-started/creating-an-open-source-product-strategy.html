@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>制定开源产品战略 - The Open Source Way</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item "><a href="../index.html"><strong aria-hidden="true">1.</strong> 开源之道</a></li><li class="chapter-item "><a href="../presenting-the-open-source-way.html"><strong aria-hidden="true">2.</strong> 引言:呈现开源之道</a></li><li class="chapter-item expanded "><a href="../getting-started/index.html"><strong aria-hidden="true">3.</strong> 马上开始</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../getting-started/community-101.html"><strong aria-hidden="true">3.1.</strong> 社区入门指南</a></li><li class="chapter-item "><a href="../getting-started/essentials-of-building-a-community.html"><strong aria-hidden="true">3.2.</strong> 社区建设要点</a></li><li class="chapter-item "><a href="../getting-started/setting-goals.html"><strong aria-hidden="true">3.3.</strong> 设定目标</a></li><li class="chapter-item expanded "><a href="../getting-started/creating-an-open-source-product-strategy.html" class="active"><strong aria-hidden="true">3.4.</strong> 制定开源产品战略</a></li><li class="chapter-item "><a href="../getting-started/new-project-checklist.html"><strong aria-hidden="true">3.5.</strong> 新项目清单</a></li></ol></li><li class="chapter-item "><a href="../attracting-users/index.html"><strong aria-hidden="true">4.</strong> 吸引用户</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../attracting-users/communication-norms-in-open-source-software-projects.html"><strong aria-hidden="true">4.1.</strong> 开源项目中的沟通规范</a></li><li class="chapter-item "><a href="../attracting-users/building-diverse-open-source-communities-by-making-them-includive-first.html"><strong aria-hidden="true">4.2.</strong> 构建多元化的开源社区：以确保社区具有包容性为首</a></li></ol></li><li class="chapter-item "><a href="../guiding-participants/index.html"><strong aria-hidden="true">5.</strong> 指导参与者</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../guiding-participants/why-people-participate-in-open-source-communities.html"><strong aria-hidden="true">5.1.</strong> 人们为什么参与开源社区</a></li><li class="chapter-item "><a href="../guiding-participants/incentivizing-and-rewarding-participants.html"><strong aria-hidden="true">5.2.</strong> 激励和奖励参与者</a></li></ol></li><li class="chapter-item "><a href="../growing-contributors/index.html"><strong aria-hidden="true">6.</strong> 贡献者不断增加</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../growing-contributors/from-users-to-contributors.html"><strong aria-hidden="true">6.1.</strong> 从用户到贡献者</a></li><li class="chapter-item "><a href="../growing-contributors/what-is-a-contribution.html"><strong aria-hidden="true">6.2.</strong> 什么是贡献？</a></li><li class="chapter-item "><a href="../growing-contributors/constructing-an-onboarding-experience.html"><strong aria-hidden="true">6.3.</strong> 构建新用户引导体验</a></li><li class="chapter-item "><a href="../growing-contributors/creating-a-culture-of-mentorship.html"><strong aria-hidden="true">6.4.</strong> 创造指导文化</a></li><li class="chapter-item "><a href="../growing-contributors/project-and-community-governance.html"><strong aria-hidden="true">6.5.</strong> 项目和社区治理</a></li><li class="chapter-item "><a href="../growing-contributors/understanding-community-roles.html"><strong aria-hidden="true">6.6.</strong> 了解社区角色</a></li><li class="chapter-item "><a href="../growing-contributors/community-manager-self-care.html"><strong aria-hidden="true">6.7.</strong> 社区管理者的自我关护</a></li></ol></li><li class="chapter-item "><a href="../measuring-success/index.html"><strong aria-hidden="true">7.</strong> 衡量成功</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../measuring-success/defining-healthy-communities.html"><strong aria-hidden="true">7.1.</strong> 定义健康社区</a></li><li class="chapter-item "><a href="../measuring-success/understanding-community-metrics.html"><strong aria-hidden="true">7.2.</strong> 了解社区指标</a></li><li class="chapter-item "><a href="../measuring-success/announcing-software-releases.html"><strong aria-hidden="true">7.3.</strong> 宣布软件发布</a></li></ol></li><li class="chapter-item "><a href="../CONTRIBUTORS.html"><strong aria-hidden="true">8.</strong> 贡献者</a></li><li class="chapter-item "><a href="../LICENSE.html"><strong aria-hidden="true">9.</strong> 许可证</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Open Source Way</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook-site" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/theopensourcewaycn/guidebook/edit/main/content/getting-started/creating-an-open-source-product-strategy.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <hr />
+<h2>description: 制定开源产品战略的指南
+author: Dave Neary <a href="mailto:dneary@redhat.com">dneary@redhat.com</a>
+updated: 2020-12-16T00:00:00.000Z</h2>
+<h1 id="制定开源产品策略"><a class="header" href="#制定开源产品策略">制定开源产品策略</a></h1>
+<p>"我们应该开源这个项目吗？"</p>
+<p>本章不会直接为你解答这个问题，但会勾勒出当你面对这个问题时应当考虑的一些关键因素。</p>
+<p>首先，请自问为何考虑采用开源模式。在承诺创建和维护开源项目之前，先理解开源该项目将_如何_帮助你或组织实现特定目标。明确这些收益是制定开源战略的第一步。</p>
+<h2 id="理解开源的经济学原理"><a class="header" href="#理解开源的经济学原理">理解开源的经济学原理</a></h2>
+<p>开源并非商业模式，而是一种协作开发软件的方式，通过降低获取成本来扩大项目的分发范围和影响力。要理解开源战略吸引人的商业逻辑，请考虑以下经济学原理：</p>
+<p><strong>商品价格下降会提升其市场需求。</strong></p>
+<p>在开源领域，降低获取成本能够最大化需求，从而促进项目采用。需要注意的是，采用成本不仅指金钱支出，还包括从现有解决方案迁移所需投入的时间和精力。</p>
+<p><strong>当某商品价格下降时，其替代品的需求也会相应减少。</strong></p>
+<p>开源项目能以较低成本便捷采用，从而撼动专有软件公司的市场地位。这一原理揭示了开源如何成为市场颠覆的推动力。颠覆意味着抓住替代方案采用的机遇，培育新兴市场。</p>
+<p><strong>其他条件不变时，商品价格下降会带动其互补品需求上升。</strong></p>
+<p>每个成功的商业开源战略都基于这一原则。若你的目标是营收，则需要确定与开源软件配套的增值服务，这些配套服务应为客户提供额外价值。</p>
+<p>制定开源战略时，你的目标是将这些原则与具体的商业目标相衔接。</p>
+<h2 id="明确团队构成与业务领域"><a class="header" href="#明确团队构成与业务领域">明确团队构成与业务领域</a></h2>
+<p>制定战略需要多方利益相关者的参与和支持。</p>
+<ul>
+<li>在早期阶段既要避免过多人员参与，又要确保从一开始就获得多元化群体的支持。</li>
+<li>采用逐渐扩大的同心圆模型来组织利益相关方。确定一个核心团队，他们需要频繁地分享草案提案，并与更多群体互动以了解潜在问题或限制。尽早让这些利益相关方参与进来，有助于及早发现并解决关键性问题。</li>
+<li>确保所有利益相关方对项目要解决的问题达成共识。既要理解项目所处的整体环境，也要评估不同投资选项的相对收益。</li>
+</ul>
+<h2 id="制定初步战略提案草案"><a class="header" href="#制定初步战略提案草案">制定初步战略提案草案</a></h2>
+<p>接下来，撰写一份战略提案文档。它应包含：</p>
+<p><strong>项目简介</strong>
+对开源项目目标的高层次描述，并简要说明该项目如何使赞助公司受益。由于每个项目的目标都不尽相同，因此任何两个项目的产品战略也不会完全一致。</p>
+<p><strong>商业依据</strong>
+明确社区项目如何转化为公司或产品团队的成功。例如："该项目的广泛采用将帮助人们从我们的其他产品中获得更多收益"，或"标准的开源参考实现将鼓励多家公司采用该标准，从而为基于该标准构建的其他产品带来网络效应。"</p>
+<p><strong>高层执行计划</strong>
+包含对衡量成功至关重要的关键绩效指标(KPI)。项目目标决定了这些 KPI。例如，如果你的目标是实现被广泛采用的事实标准，则可以衡量符合标准的分发供应商数量；如果目标是市场教育，那么入门文档、学习路径、教程和杂志文章的表现将是首要关注指标。</p>
+<h2 id="从战略到行动的转变"><a class="header" href="#从战略到行动的转变">从战略到行动的转变</a></h2>
+<p>战略文件若能通过授权个人做出支持全局目标的局部决策来影响行动，便具有实际价值。因此，传达战略对实现战略目标至关重要。每位成员都应理解自身工作对开源战略的影响。当整个组织明确项目目标时，就预算和资源分配达成共识将变得更为容易。</p>
+<p><strong>持续监控并通报项目目标的推进情况</strong>
+如果培养多元化的共同开发者群体是你的社区目标，那么请为新参与者的贡献庆贺，并在每月通讯中纳入增长数据。</p>
+<p><strong>分配资源以确保成功成为可能</strong>
+如果你的目标是将整个行业从专有竞争对手转向开源项目，却只让一个人兼职推广这个开源项目，那么你的成功几率将十分渺茫。</p>
+<p><strong>确保你的战略是一份活文件</strong>
+定期与关键利益相关者重新审视它，以确保你的开源战略保持新颖性和相关性。</p>
+<p>制定开源战略需要在开发过程中代表所有关键利益相关方以获得支持，探索开源如何契合组织目标的深层原因，确保衡量指标能准确评估成效，并做好必要时调整方向的准备。若能妥善完成这些环节，你就能让每位参与者都成为该开源项目的拥护者。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../getting-started/setting-goals.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../getting-started/new-project-checklist.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../getting-started/setting-goals.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../getting-started/new-project-checklist.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
