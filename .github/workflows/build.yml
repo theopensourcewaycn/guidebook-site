@@ -42,7 +42,7 @@ jobs:
       - name: Install mdbook-pdf
         run: |
           mkdir -p ~/bin
-          curl -sSL https://github.com/HollowMan6/mdbook-pdf/releases/latest/download/mdbook-pdf-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C ~/bin
+          curl -sSL https://github.com/HollowMan6/mdbook-pdf/releases/download/v0.1.11/mdbook-pdf-v0.1.11-x86_64-unknown-linux-gnu | tar -xz -C ~/bin
           chmod +x ~/bin/mdbook-pdf
           echo "$HOME/bin" >> $GITHUB_PATH
           
