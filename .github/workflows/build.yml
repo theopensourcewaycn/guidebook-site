@@ -34,31 +34,8 @@ jobs:
         with:
           mdbook-version: '0.4.40'
           
-      - name: Install mdbook-pdf dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          
-      - name: Install mdbook-pdf
-        run: |
-          mkdir -p ~/bin
-          curl -sSL https://github.com/HollowMan6/mdbook-pdf/releases/download/v0.1.11/mdbook-pdf-v0.1.11-x86_64-unknown-linux-gnu | tar -xz -C ~/bin
-          chmod +x ~/bin/mdbook-pdf
-          echo "$HOME/bin" >> $GITHUB_PATH
-          
       - name: Build HTML
         run: mdbook build
-        
-      - name: Build PDF
-        run: |
-          mdbook-pdf --standalone true
-          mkdir -p book/pdf
-          if [ -f "book/pdf/output.pdf" ]; then
-            mv book/pdf/output.pdf book/the-open-source-way.pdf
-          elif [ -f "output.pdf" ]; then
-            mv output.pdf book/the-open-source-way.pdf
-          fi
-        continue-on-error: true
         
       - name: Upload artifact
         uses: actions/upload-artifact@v4
@@ -74,19 +51,4 @@ jobs:
           publish_dir: ./book
           publish_branch: gh-pages
           
-      - name: Create Release
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: build-${{ github.run_number }}
-          name: Build ${{ github.run_number }}
-          files: |
-            book/the-open-source-way.pdf
-          body: |
-            自动构建 #${{ github.run_number }}
-            
-            - 网站: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-            - PDF: 见附件
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        continue-on-error: true
+
