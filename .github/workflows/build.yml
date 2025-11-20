@@ -29,16 +29,22 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       
-      - name: Setup Rust
-        uses: dtolnay/rust-toolchain@stable
-      
       - name: Install mdBook
+        uses: peaceiris/actions-mdbook@v2
+        with:
+          mdbook-version: '0.4.40'
+          
+      - name: Install mdbook-pdf dependencies
         run: |
-          cargo install mdbook --version 0.4.40
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser
           
       - name: Install mdbook-pdf
         run: |
-          cargo install mdbook-pdf
+          mkdir -p ~/bin
+          curl -sSL https://github.com/HollowMan6/mdbook-pdf/releases/latest/download/mdbook-pdf-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C ~/bin
+          chmod +x ~/bin/mdbook-pdf
+          echo "$HOME/bin" >> $GITHUB_PATH
           
       - name: Build HTML
         run: mdbook build
