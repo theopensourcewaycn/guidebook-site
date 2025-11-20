@@ -41,6 +41,11 @@ jobs:
       - name: Build HTML
         run: mdbook build
         
+      - name: Post-process edit links
+        run: |
+          # 最佳实践：构建后修正编辑链接，移除 src 目录前缀
+          find book -name "*.html" -type f -exec sed -i 's|/guidebook/edit/main-cn/content/|/guidebook/edit/main-cn/|g' {} \;
+        
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
